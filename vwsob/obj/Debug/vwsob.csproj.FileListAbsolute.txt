@@ -1,0 +1,16 @@
+D:\proyectos\vw-sob\vwsob\bin\Debug\vwsob.exe
+D:\proyectos\vw-sob\vwsob\bin\Debug\vwsob.pdb
+D:\proyectos\vw-sob\vwsob\obj\Debug\vwsob.csprojAssemblyReference.cache
+D:\proyectos\vw-sob\vwsob\obj\Debug\vwsob.csproj.CoreCompileInputs.cache
+D:\proyectos\vw-sob\vwsob\obj\Debug\vwsob.exe
+D:\proyectos\vw-sob\vwsob\obj\Debug\vwsob.pdb
+D:\proyectos\vw-sob\vwsob\bin\Debug\System.Security.AccessControl.dll
+D:\proyectos\vw-sob\vwsob\bin\Debug\System.Security.Permissions.dll
+D:\proyectos\vw-sob\vwsob\bin\Debug\System.Security.Principal.Windows.dll
+D:\proyectos\vw-sob\vwsob\bin\Debug\System.Security.AccessControl.xml
+D:\proyectos\vw-sob\vwsob\bin\Debug\System.Security.Permissions.xml
+D:\proyectos\vw-sob\vwsob\bin\Debug\System.Security.Principal.Windows.xml
+D:\proyectos\vw-sob\vwsob\obj\Debug\vwsob.csproj.CopyComplete
+D:\proyectos\vw-sob\vwsob\bin\Debug\vwsob.exe.config
+D:\proyectos\vw-sob\vwsob\bin\Debug\Newtonsoft.Json.dll
+D:\proyectos\vw-sob\vwsob\bin\Debug\Newtonsoft.Json.xml
