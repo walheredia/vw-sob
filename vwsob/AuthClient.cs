@@ -4,22 +4,25 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Configuration;
+using Serilog;
 
 public class AuthClient
 {
-    private readonly string _endpointUrl = ConfigurationManager.AppSettings["EndpointUrl"];
+    private readonly ILogger _logger;
+    private readonly string _endpointUrl = ConfigurationManager.AppSettings["LoginEndpointUrl"];
     private readonly string _clientId = ConfigurationManager.AppSettings["ClientId"];
     private readonly string _clientSecret = ConfigurationManager.AppSettings["ClientSecret"];
 
-    public AuthClient()
+    public AuthClient(ILogger logger)
     {
-        
+        _logger = logger;
     }
 
     public async Task<string> GetAccessToken()
     {
         using (var httpClient = new HttpClient())
         {
+            _logger.Information("Autenticando contra SOB");
             var requestContent = new StringContent(
                 "grant_type=client_credentials" +
                 "&client_id=" + Uri.EscapeDataString(_clientId) +
@@ -37,13 +40,14 @@ public class AuthClient
             }
             else
             {
-                throw new Exception("Error en la solicitud de autenticación. Código de respuesta: " + response.StatusCode);
+                var error = "Error en la solicitud de autenticación. Código de respuesta: " + response.StatusCode;
+                _logger.Error(error);
+                throw new Exception(error);
             }
         }
     }
 }
 
-// Clase para representar la estructura del token JSON
 public class TokenResponse
 {
     public string access_token { get; set; }

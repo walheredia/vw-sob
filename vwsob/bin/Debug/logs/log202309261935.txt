@@ -1,0 +1,7 @@
+2023-09-26 19:35:03.821 -03:00 [INF] Dealer Number: 53056
+2023-09-26 19:35:03.878 -03:00 [INF] Inicio ejecución
+2023-09-26 19:35:03.878 -03:00 [INF] Interpretando argumentos
+2023-09-26 19:35:03.917 -03:00 [INF] Abriendo conexión BBDD
+2023-09-26 19:35:04.203 -03:00 [INF] BBDD Eventos, conectada satisfactoriamente
+2023-09-26 19:35:04.290 -03:00 [INF] 56637
+2023-09-26 19:35:04.343 -03:00 [INF] Fin de ejecución
