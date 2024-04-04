@@ -22,20 +22,21 @@ class Program
             Log.Information("Inicio ejecución");
             Log.Information("Interpretando argumentos");
 
-            vwsob.LocalAgenda localAgenda = new vwsob.LocalAgenda(Log.Logger);
-            Task.Run(async () =>
-            {
-                await localAgenda.syncAgendaLocalToSobAsync();
-            }).GetAwaiter().GetResult();
-            return;
-
-
             var arguments = ParseArguments(args);
-            if (arguments.ContainsKey("sync-to-sob"))
-            {
-                Log.Information("Inicio sincronización (sync-to-sob)");
-                Log.Information("Fin sincronización (sync-to-sob)");
-            }
+            //if (arguments.ContainsKey("sync-to-sob"))
+            //{
+                
+
+                vwsob.LocalAgenda localAgenda = new vwsob.LocalAgenda(Log.Logger);
+                Task.Run(async () =>
+                {
+                    Log.Information("Inicio sincronización (sync-to-sob)");
+                    await localAgenda.syncAgendaLocalToSobAsync();
+                    Log.Information("Fin sincronización (sync-to-sob)");
+                }).GetAwaiter().GetResult();
+
+               
+            //}
 
             if (arguments.ContainsKey("sync-from-sob")) 
             {

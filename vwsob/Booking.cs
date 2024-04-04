@@ -42,14 +42,14 @@ namespace vwsob
 
                 using (OdbcTransaction transaction = connection.BeginTransaction())
                 {
-                    OdbcCommand cmnd = new OdbcCommand("SELECT FecUltEjec, CodTaller FROM [Eventos].[dbo].[Eventos_Config] where CodEvento=10019", connection, transaction);
+                    OdbcCommand cmnd = new OdbcCommand("SELECT FecUltEjec, CodTaller FROM [Eventos].[dbo].[Eventos_Config] where CodEvento=10004", connection, transaction);
                     OdbcDataReader reader = cmnd.ExecuteReader();
                     cmnd.Dispose();
                     try
                     {
                         if (!reader.Read())
                         {
-                            throw new InvalidOperationException("Evento 10019 no encontrado");
+                            throw new InvalidOperationException("Evento 10004 no encontrado");
                         }
                         
                         int fecUltEjecIndex = reader.GetOrdinal("FecUltEjec");
@@ -63,7 +63,7 @@ namespace vwsob
                         DateTime dteFecIni = reader.GetDateTime(fecUltEjecIndex);
                         DateTime lastExecution = DateTime.Now.AddMonths(-1);
 
-                        OdbcCommand updateCommand = new OdbcCommand("UPDATE [Eventos].[dbo].[Eventos_Config] SET FecUltEjec = ? WHERE CodEvento = 10019", connection, transaction);
+                        OdbcCommand updateCommand = new OdbcCommand("UPDATE [Eventos].[dbo].[Eventos_Config] SET FecUltEjec = ? WHERE CodEvento = 10004", connection, transaction);
                         updateCommand.Parameters.Add(new OdbcParameter("@lastExecution", lastExecution));
                         updateCommand.ExecuteNonQuery();
                         
